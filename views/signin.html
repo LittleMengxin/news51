@@ -37,7 +37,7 @@
             <p>没有账号? <a href="/signup">点击创建</a>.</p>
         </div>
     </div>
-    <script src="/node_modules"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         // 客户端发送表单请求
         // 1. 获取表单元素绑定事件
@@ -49,9 +49,10 @@
         $('#signin_form').on('submit', function(e) {
             e.preventDefault();
             var formdata = $(this).serialize();
-            // console.log(formdata);
             $.post('/signin', formdata, function(data) {
-                // console.log(data);
+                console.log(data);
+                alert(data);
+                
             });
 
         });
